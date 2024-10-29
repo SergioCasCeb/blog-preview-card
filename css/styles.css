@@ -117,6 +117,7 @@ a {
 footer {
   padding: var(--sp-sm);
   font-size: 0.75rem;
+  text-align: center;
 }
 footer a {
   color: var(--clr-neutral-500);
