@@ -1,0 +1,211 @@
+/**
+ * CSS reset.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+picture,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+}
+
+html {
+  hanging-punctuation: first last;
+  color-scheme: dark light;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+  text-wrap: pretty;
+  max-width: 65ch;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+  }
+}
+@font-face {
+  font-family: "figtree";
+  src: url(../assets/fonts/Figtree-VariableFont_wght.ttf) format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+/*
+* Global styles
+*/
+:root {
+  --clr-primary: #f4d04e;
+  --clr-neutral-900: #111111;
+  --clr-neutral-500: #6b6b6b;
+  --clr-neutral-50: #ffffff;
+  --ff-primary: "figtree", sans-serif;
+  --fs-lg: clamp(1.25rem, 1.1616541353383458rem + 0.37593984962406013vw, 1.5rem);
+  --fs-m: clamp(0.875rem, 0.8308270676691729rem + 0.18796992481203006vw, 1rem);
+  --fs-sm: clamp(0.75rem, 0.7058270676691729rem + 0.18796992481203006vw, 0.875rem);
+  --fs-user: 0.875rem;
+  --lh-body: 1.5;
+  --fw-eb: 800;
+  --fw-m: 500;
+  --sp-lg: 1.5rem;
+  --sp-m: .8rem;
+  --sp-sm: .5rem;
+  --sp-xsm: .25rem;
+}
+
+html {
+  background-color: var(--clr-primary);
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-m);
+  line-height: var(--lh-body);
+  color: var(--clr-neutral-900);
+  font-weight: var(--fw-m);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  height: 100%;
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer {
+  padding: var(--sp-sm);
+  font-size: 0.75rem;
+}
+footer a {
+  color: var(--clr-neutral-500);
+}
+
+/*
+* Utilities
+*/
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--sp-lg);
+}
+
+/*
+* Components
+*/
+.blog-card {
+  background-color: var(--clr-neutral-50);
+  border-radius: 20px;
+  max-width: 24rem;
+  padding: var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--sp-lg);
+  border: 1px solid var(--clr-neutral-900);
+  box-shadow: 8px 8px 0 var(--clr-neutral-900);
+}
+.blog-card__image {
+  height: 12.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.blog-card__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blog-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: var(--sp-m);
+}
+.blog-card__content .card-tags {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--sp-m);
+}
+.blog-card__content .card-tags .tag {
+  background-color: var(--clr-primary);
+  padding: var(--sp-xsm) var(--sp-m);
+  border-radius: 4px;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-eb);
+}
+.blog-card__content .card-date {
+  font-size: var(--fs-sm);
+}
+.blog-card__content .card-title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-eb);
+  transition: color 150ms ease-in-out;
+}
+.blog-card__content .card-title:hover, .blog-card__content .card-title:focus {
+  color: var(--clr-primary);
+}
+.blog-card__content .card-description {
+  font-size: var(--fs-m);
+  color: var(--clr-neutral-500);
+}
+.blog-card__user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-m);
+}
+.blog-card__user .user-image {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+.blog-card__user .user-name {
+  font-size: var(--fs-user);
+  font-weight: var(--fw-eb);
+}/*# sourceMappingURL=styles.css.map */
